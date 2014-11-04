@@ -8,12 +8,10 @@ use mvc\Controller\TimController;
 use mvc\Controller\IndexController;
 use Phroute\RouteCollector;
 
-
 $request = Request::createFromGlobals();
 
 $loader = new Twig_Loader_Filesystem(__DIR__ . '/app/views');
 $twig = new Twig_Environment($loader);
-
 $TimController = new TimController($twig);
 $indexController = new IndexController($twig);
 
@@ -22,7 +20,6 @@ $router = new RouteCollector();
 $router->get('/', [$indexController, 'indexAction']);
 $router->get('/tim', [$TimController, 'getTimsAction']);
 $router->get('/tim/{timId}', [$TimController, 'getTimAction']);
-
 
 $dispatcher = new Phroute\Dispatcher($router);
 try {

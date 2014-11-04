@@ -8,7 +8,6 @@
 
 namespace mvc\Models;
 
-
 abstract class AbstractFootballTim
 {
     public $trainer;

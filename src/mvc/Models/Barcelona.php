@@ -8,10 +8,9 @@
 
 namespace mvc\Models;
 
-
 class Barcelona extends AbstractFootballTim
 {
-    function __construct($trainer, $stadium, $captain)
+    public function __construct($trainer, $stadium, $captain)
     {
         parent::__construct($trainer, $stadium, $captain);
     }

@@ -8,10 +8,9 @@
 
 namespace mvc\Models;
 
-
 class RealMadrid extends AbstractFootballTim implements LCInterface
 {
-    function __construct($trainer, $stadium, $captain)
+    public function __construct($trainer, $stadium, $captain)
     {
         parent::__construct($trainer, $stadium, $captain);
     }
