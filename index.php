@@ -7,8 +7,9 @@ use Symfony\Component\HttpFoundation\Response;
 use mvc\Controller\TimController;
 use mvc\Controller\IndexController;
 use Phroute\RouteCollector;
+use mvc\MvcKernel;
 
-$request = Request::createFromGlobals();
+/*$request = Request::createFromGlobals();
 
 $loader = new Twig_Loader_Filesystem(__DIR__ . '/app/views');
 $twig = new Twig_Environment($loader);
@@ -30,4 +31,8 @@ try {
     $response = new Response(sprintf('<h1 style="color: red">Error 405:</h1><b style="color: red">Url was matched but method "%s" is not allowed</b>', $e));
 }
 
+$response->send();*/
+$request = Request::createFromGlobals();
+$kernel = new MvcKernel();
+$response = $kernel->handle($request);
 $response->send();
