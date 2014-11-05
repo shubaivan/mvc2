@@ -7,6 +7,7 @@ use Phroute\Dispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use mvc\Controller\TimController;
 use mvc\Controller\IndexController;
+use Symfony\Component\HttpFoundation\Response;
 
 abstract class Kernel implements KernelInterface
 {

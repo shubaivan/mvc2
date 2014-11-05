@@ -21,6 +21,10 @@ class TimController
     {
         return new Response($this->twig->render('tims.html.twig'));
     }
+    public function getErrorAction()
+    {
+        return new Response($this->twig->render('error404.html.twig'));
+    }
     /**
      * @param  string   $id
      * @return Response
