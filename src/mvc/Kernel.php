@@ -18,6 +18,8 @@ abstract class Kernel implements KernelInterface
         try {
             $response = $dispatcher->dispatch($request->getMethod(), parse_url($request->getPathInfo(), PHP_URL_PATH));
         } catch (\Phroute\Exception\HttpRouteNotFoundException $e) {
+            $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../app/views');
+            $twig = new \Twig_Environment($loader);
             $response = new Response($twig->render('error404.html.twig'));
         } catch (\Phroute\Exception\HttpMethodNotAllowedException $e) {
             $response = new Response(sprintf('<h1 style="color: red">Error 405:</h1><b style="color: red">Url was matched but method "%s" is not allowed</b>', $e));

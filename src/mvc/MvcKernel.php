@@ -8,23 +8,12 @@ class MvcKernel extends Kernel
 {
     public function getRoutes()
     {
-
-        if (!empty($arr))
-        {
             return array(
-
-
                 ['GET', '/', 'mvc\Controller\IndexController:indexAction'],
                 ['GET', '/tim', 'mvc\Controller\TimController:getTimsAction'],
                 ['GET', '/tim/{timId}', 'mvc\Controller\TimController:getTimAction'],
 
             );
-        }
-        else
-            return array(
-                ['GET', '/error', 'mvc\Controller\TimController:geterrorAction'],
-            );
-
 
     }
     public function getTemplateHandler()
