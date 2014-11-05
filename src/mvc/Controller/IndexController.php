@@ -15,4 +15,8 @@ class IndexController
     {
         return new Response($this->twig->render('index.html.twig'));
     }
+    public function errorAction()
+    {
+        return new Response($this->twig->render('error404.html.twig'));
+    }
 }
